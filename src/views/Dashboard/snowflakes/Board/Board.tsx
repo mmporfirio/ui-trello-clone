@@ -4,6 +4,7 @@ import Column, { ColumnType } from "./snowflakes/Column/Column";
 import { DragDropContext, DropResult, Droppable } from "react-beautiful-dnd";
 import initialData from "./Board.mock";
 import { BoardContainer, StyledList } from "./Board.styles";
+import NewColumnButton from "./snowflakes/NewColumnButton/NewColumnButton";
 
 type TaskBoardType = {
   tasks: Record<string, CardType>;
@@ -22,10 +23,20 @@ export type ActionType =
         endIndex: number;
       };
     }
-  | { type: "ADD_CARD"; payload: { columnId: string; card: CardType } }; // Nova ação para adicionar um card
+  | { type: "ADD_CARD"; payload: { columnId: string; card: CardType } }
+  | { type: "ADD_COLUMN"; payload: { column: ColumnType } };
 
 const reducer = (state: TaskBoardType, action: ActionType): TaskBoardType => {
   switch (action.type) {
+    case "ADD_COLUMN": {
+      const { column } = action.payload;
+      const newColumnOrder = [...state.columnOrder, column.id];
+      return {
+        ...state,
+        columns: { ...state.columns, [column.id]: column },
+        columnOrder: newColumnOrder,
+      };
+    }
     case "MOVE_COLUMN": {
       const newColumnOrder = [...state.columnOrder];
       const [removedColumn] = newColumnOrder.splice(
@@ -145,7 +156,9 @@ const Board = () => {
                   />
                 );
               })}
+              <NewColumnButton dispatch={dispatch} />
             </StyledList>
+
             {provided.placeholder}
           </BoardContainer>
         )}
