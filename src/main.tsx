@@ -1,11 +1,10 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import RouterProvider from "./routes/RouterProvider/RouterProvider.tsx";
 import { Toaster } from "react-hot-toast";
 import "./index.css";
 
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme, GlobalStyles } from "./theme";
+import { darkTheme, GlobalStyles } from "./theme";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <ThemeProvider theme={darkTheme}>
