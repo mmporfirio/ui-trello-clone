@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Trello Clone (In development)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Trello-inspired project management tool, featuring boards, lists, and cards for organizing tasks efficiently in a collaborative team environment.
 
-Currently, two official plugins are available:
+## Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<a href="https://reactjs.org/" target="_blank" rel="noreferrer">  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/></a><a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> <a href="https://styled-components.com/" target="_blank" rel="noreferrer"><img src="https://styled-components.com/logo.png" alt="styled-components" width="40" height="40"/></a>
 
-## Expanding the ESLint configuration
+## Roadmap
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [x] Create columns and cards
+- [x] Change position using drag-and-drop
+- [ ] Navigation menu
+- [ ] Sidebar
+- [ ] Create other boards 
+- [ ] Board Management Panel
+- [ ] Light and dark theme toggle
+- [ ] Card details
+- [ ] Card customization
+- [ ] Backend data persistence (NestJS)
+- [ ] User authentication
 
-- Configure the top-level `parserOptions` property like this:
+## Screenshots
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+![drag-and-drop](https://github.com/mmporfirio/ui-trello-clone/assets/147407337/77ff51b6-6470-4690-822c-cc7e866c4008)
+![creating](https://github.com/mmporfirio/ui-trello-clone/assets/147407337/07f5ec92-5da8-4e39-acfd-8db860ed40da)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
